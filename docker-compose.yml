@@ -1,0 +1,13 @@
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-minishop}
+    ports:
+      - "3306:3306"
+    volumes:
+      - minishop_mysql:/var/lib/mysql
+
+volumes:
+  minishop_mysql:

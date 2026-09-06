@@ -1,0 +1,52 @@
+.admin-orders-page { padding-bottom:50px; }
+.admin-orders-head { display:flex; align-items:end; justify-content:space-between; gap:28px; margin-bottom:25px; }
+.admin-orders-head>div:first-child>span { color:var(--accent); font-size:10px; font-weight:850; letter-spacing:.13em; text-transform:uppercase; }
+.admin-orders-head h1 { margin:6px 0 4px; color:var(--title); font-size:clamp(38px,4vw,56px); letter-spacing:-.055em; line-height:1; }
+.admin-orders-head p { margin:0; color:var(--muted); font-size:12px; }
+.admin-order-alerts { display:flex; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; }
+.admin-order-alerts>div { display:grid; gap:3px; min-width:130px; padding:14px 18px; }
+.admin-order-alerts>div+div { border-left:1px solid var(--line); }
+.admin-order-alerts b { color:var(--accent); font-size:23px; font-variant-numeric:tabular-nums; }
+.admin-order-alerts span { color:var(--muted); font-size:9px; }
+.admin-order-tabs { position:sticky; top:0; z-index:8; display:flex; overflow-x:auto; margin-bottom:14px; padding:0 8px; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.96); box-shadow:0 10px 28px rgba(62,30,83,.06); scrollbar-width:none; }
+.admin-order-tabs::-webkit-scrollbar { display:none; }
+.admin-order-tabs button { position:relative; display:flex; justify-content:center; gap:6px; min-width:max-content; flex:1; padding:16px 13px 14px; border:0; background:transparent; color:var(--muted); font:inherit; font-size:10px; font-weight:750; cursor:pointer; }
+.admin-order-tabs button::after { content:""; position:absolute; right:13px; bottom:0; left:13px; height:3px; border-radius:3px 3px 0 0; background:var(--accent); transform:scaleX(0); transition:transform .2s ease; }
+.admin-order-tabs button.active { color:var(--accent); }
+.admin-order-tabs button.active::after { transform:scaleX(1); }
+.admin-order-tabs small { display:grid; place-items:center; min-width:17px; height:17px; padding:0 3px; border-radius:5px; background:var(--lavender-soft); font-size:8px; }
+.admin-order-search { display:grid; grid-template-columns:40px 1fr; align-items:center; margin-bottom:17px; padding:6px 14px; border:1px solid transparent; border-radius:12px; background:#eee8f1; transition:border-color .2s ease,background .2s ease; }
+.admin-order-search:focus-within { border-color:#ccb6d9; background:#fff; }
+.admin-order-search>span { color:#8b7d91; font-size:25px; }
+.admin-order-search input { min-height:40px; border:0; outline:0; background:transparent; color:var(--title); font:inherit; font-size:11px; }
+.admin-order-list { display:grid; gap:14px; }
+.admin-order-row { overflow:hidden; border:1px solid var(--line); border-radius:15px; background:#fff; box-shadow:0 10px 30px rgba(62,30,83,.04); }
+.admin-order-row.needs-action { border-left:4px solid var(--accent); }
+.admin-order-row>header { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 18px; border-bottom:1px solid var(--line); }
+.admin-order-row>header>div { display:flex; align-items:center; gap:10px; }
+.admin-order-row>header b { color:var(--title); font-size:12px; font-variant-numeric:tabular-nums; }
+.admin-order-row>header time { color:var(--muted); font-size:9px; font-variant-numeric:tabular-nums; }
+.admin-order-body { display:grid; grid-template-columns:minmax(200px,.3fr) minmax(0,.7fr); }
+.admin-order-customer { display:grid; align-content:start; gap:5px; padding:18px; border-right:1px solid var(--line); }
+.admin-order-customer>span { color:var(--muted); font-size:8px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+.admin-order-customer>b { color:var(--title); font-size:11px; }
+.admin-order-customer small,.admin-order-customer p { margin:0; color:var(--muted); font-size:9px; line-height:1.5; }
+.admin-order-products { padding:4px 18px; }
+.admin-order-products>div { display:grid; grid-template-columns:48px minmax(0,1fr) auto; gap:11px; align-items:center; padding:10px 0; }
+.admin-order-products>div+div { border-top:1px solid var(--line); }
+.admin-order-products>div>div { display:grid; place-items:center; width:48px; height:48px; overflow:hidden; border-radius:9px; background:var(--lavender-soft); color:var(--accent); font-size:16px; font-weight:850; }
+.admin-order-products img { width:100%; height:100%; object-fit:cover; }
+.admin-order-products p { display:grid; gap:3px; min-width:0; margin:0; }
+.admin-order-products p b { overflow:hidden; color:var(--title); font-size:10px; text-overflow:ellipsis; white-space:nowrap; }
+.admin-order-products p small,.admin-order-more { color:var(--muted); font-size:8px; }
+.admin-order-products>div>strong { color:var(--accent); font-size:9px; font-variant-numeric:tabular-nums; }
+.admin-order-row>footer { display:flex; align-items:center; justify-content:flex-end; gap:22px; padding:14px 18px; border-top:1px solid var(--line); background:#fbf9fc; }
+.admin-order-row>footer>div { display:flex; align-items:baseline; gap:9px; }
+.admin-order-row>footer span { color:var(--muted); font-size:9px; }
+.admin-order-row>footer strong { color:var(--accent); font-size:18px; font-variant-numeric:tabular-nums; }
+.admin-order-row>footer .btn { min-width:115px; border-radius:9px; }
+.admin-orders-empty { padding:60px; border:1px dashed var(--line); border-radius:15px; background:#fff; text-align:center; }
+.admin-orders-empty b { color:var(--title); }.admin-orders-empty p { color:var(--muted); }
+.admin-orders-loading { display:grid; gap:14px; }.admin-orders-loading span { height:185px; border-radius:15px; background:#eee8f1; }
+@media (max-width:850px) { .admin-orders-head { align-items:flex-start; flex-direction:column; } .admin-order-body { grid-template-columns:1fr; } .admin-order-customer { border-right:0; border-bottom:1px solid var(--line); } }
+@media (max-width:560px) { .admin-order-alerts { width:100%; }.admin-order-alerts>div { min-width:0; flex:1; }.admin-order-row>header { align-items:flex-start; flex-direction:column; }.admin-order-row>footer { justify-content:space-between; }.admin-order-products>div { grid-template-columns:44px minmax(0,1fr); }.admin-order-products>div>strong { grid-column:2; }.admin-order-row>footer .btn { min-width:0; } }

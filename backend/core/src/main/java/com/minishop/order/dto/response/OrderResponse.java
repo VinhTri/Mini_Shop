@@ -1,0 +1,49 @@
+package com.minishop.order.dto.response;
+
+import com.minishop.order.enums.OrderStatus;
+import com.minishop.order.enums.PaymentMethod;
+import com.minishop.order.enums.PaymentStatus;
+import com.minishop.order.enums.ReturnStatus;
+import com.minishop.order.enums.ExchangeStatus;
+import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.List;
+
+public record OrderResponse(
+        Long id,
+        String orderCode,
+        OrderStatus status,
+        String fullName,
+        String phone,
+        String address,
+        String note,
+        PaymentMethod paymentMethod,
+        PaymentStatus paymentStatus,
+        ReturnStatus returnStatus,
+        String returnReason,
+        String returnDescription,
+        Instant returnRequestedAt,
+        Instant returnApprovedAt,
+        String refundBankName,
+        String refundAccountName,
+        String refundAccountNumber,
+        Instant refundBankSubmittedAt,
+        Instant returnItemReceivedAt,
+        Instant refundedAt,
+        ExchangeStatus exchangeStatus,
+        Long exchangeProductId,
+        String exchangeRequestedVariant,
+        String exchangeReason,
+        String exchangeDescription,
+        Instant exchangeRequestedAt,
+        Instant exchangeApprovedAt,
+        Instant exchangeItemReceivedAt,
+        Instant exchangeShippingAt,
+        Instant exchangeCompletedAt,
+        BigDecimal total,
+        Instant createdAt,
+        Instant confirmedAt,
+        Instant shippingAt,
+        Instant completedAt,
+        Instant cancelledAt,
+        List<OrderItemResponse> items) {}

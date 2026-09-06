@@ -1,0 +1,36 @@
+.order-account-layout { display:grid; grid-template-columns:clamp(210px,15vw,250px) minmax(0,1fr); gap:clamp(20px,2vw,32px); align-items:start; width:100%; }
+.order-account-layout>main { min-width:0; }
+.order-account-sidebar { position:sticky; top:92px; overflow:hidden; border:1px solid rgba(91,45,130,.12); border-radius:18px; background:rgba(255,255,255,.92); box-shadow:0 16px 42px rgba(72,34,105,.06); }
+.order-account-sidebar>header { display:flex; align-items:center; gap:12px; padding:20px 17px; border-bottom:1px solid var(--line); background:radial-gradient(circle at 0 0,rgba(236,221,245,.8),transparent 70%); }
+.order-account-sidebar>header>span { display:grid; place-items:center; width:48px; height:48px; flex:none; border-radius:15px; background:var(--accent); color:#fff; box-shadow:0 10px 22px rgba(91,45,130,.2); font-size:17px; font-weight:850; }
+.order-account-sidebar>header>div { display:grid; gap:4px; min-width:0; }
+.order-account-sidebar>header b,.order-account-sidebar>header small { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.order-account-sidebar>header b { color:var(--title); font-size:11px; }
+.order-account-sidebar>header small { color:var(--muted); font-size:8px; }
+.order-account-sidebar nav { display:grid; padding:10px; }
+.order-account-sidebar nav a,.order-sidebar-categories a { display:grid; grid-template-columns:31px minmax(0,1fr); align-items:center; gap:9px; min-height:42px; padding:5px 9px; border-radius:10px; color:#55495a; font-size:10px; font-weight:700; text-decoration:none; transition:color .2s ease,background .2s ease,transform .2s ease; }
+.order-account-sidebar nav a:hover,.order-sidebar-categories a:hover { color:var(--accent); background:#f7f1fa; transform:translateX(2px); }
+.order-account-sidebar nav a.active { color:var(--accent); background:var(--lavender-soft); }
+.order-account-sidebar nav i { display:grid; place-items:center; width:28px; height:28px; border-radius:8px; background:#f2ecf5; color:var(--accent); font-size:16px; font-style:normal; }
+.order-account-sidebar nav a.active i { background:var(--accent); color:#fff; }
+.order-sidebar-categories { padding:12px 10px 16px; border-top:1px solid var(--line); }
+.order-sidebar-categories>p { margin:0 9px 8px; color:#97899b; font-size:8px; font-weight:850; letter-spacing:.11em; text-transform:uppercase; }
+.order-sidebar-categories>a img { width:28px; height:28px; border-radius:8px; object-fit:cover; background:var(--lavender-soft); }
+.order-sidebar-categories>a span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.order-sidebar-categories>small { display:block; padding:9px; color:var(--muted); font-size:8px; }
+@media (max-width:900px) {
+  .order-account-layout { grid-template-columns:1fr; }
+  .order-account-sidebar { position:static; display:grid; grid-template-columns:auto 1fr; }
+  .order-account-sidebar>header { border-right:1px solid var(--line); border-bottom:0; }
+  .order-account-sidebar nav { grid-template-columns:1fr 1fr; align-content:center; }
+  .order-sidebar-categories { grid-column:1/-1; display:flex; gap:5px; overflow-x:auto; padding:10px; }
+  .order-sidebar-categories>p,.order-sidebar-categories>small { display:none; }
+  .order-sidebar-categories a { min-width:max-content; }
+}
+@media (max-width:560px) {
+  .order-account-sidebar { grid-template-columns:1fr; }
+  .order-account-sidebar>header { border-right:0; border-bottom:1px solid var(--line); }
+  .order-account-sidebar nav { padding:6px; }
+  .order-account-sidebar nav a { grid-template-columns:26px 1fr; min-height:36px; font-size:9px; }
+  .order-account-sidebar nav i { width:24px; height:24px; font-size:13px; }
+}

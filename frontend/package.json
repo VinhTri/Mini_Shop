@@ -1,0 +1,15 @@
+{
+  "name": "mini-shop-frontends",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:customer": "npm --prefix customer run dev",
+    "dev:admin": "npm --prefix admin run dev",
+    "build:customer": "npm --prefix customer run build",
+    "build:admin": "npm --prefix admin run build",
+    "build": "npm run build:customer && npm run build:admin",
+    "lint:customer": "npm --prefix customer run lint",
+    "lint:admin": "npm --prefix admin run lint",
+    "lint": "npm run lint:customer && npm run lint:admin"
+  }
+}

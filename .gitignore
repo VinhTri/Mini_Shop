@@ -1,0 +1,13 @@
+backend/target/
+backend/data/
+frontend/node_modules/
+frontend/dist/
+.idea/
+.DS_Store
+*.log
+.agents/
+**/.env.development
+.env
+**/.env.properties
+!**/.env.example
+!**/.env.properties.example
