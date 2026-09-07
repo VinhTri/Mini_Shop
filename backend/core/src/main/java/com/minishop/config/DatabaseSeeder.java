@@ -32,12 +32,19 @@ public class DatabaseSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        ensureUser(adminEmail, adminPassword, "Quản trị viên", Role.ADMIN);
-        ensureUser(userEmail, userPassword, "Khách hàng mẫu", Role.USER);
+        createUserIfMissing(adminEmail, adminPassword, "Quản trị viên", Role.ADMIN);
+        createUserIfMissing(userEmail, userPassword, "Khách hàng mẫu", Role.USER);
     }
 
-    private void ensureUser(String email, String rawPassword, String name, Role role) {
-        User account = userRepository.findByEmail(email).orElseGet(User::new);
+    private void createUserIfMissing(String email, String rawPassword, String name, Role role) {
+        if (userRepository.findByEmail(email).isPresent()) {
+            return;
+        }
+        if (rawPassword == null || rawPassword.isBlank()) {
+            throw new IllegalStateException("Seed password must not be blank for " + email);
+        }
+
+        User account = new User();
         account.setEmail(email);
         account.setPassword(passwordEncoder.encode(rawPassword));
         account.setName(name);

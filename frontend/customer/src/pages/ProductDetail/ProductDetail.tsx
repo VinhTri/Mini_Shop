@@ -75,7 +75,7 @@ export function ProductDetail() {
             <div className="detail-image-empty">
               <span className="detail-image-halo"><CatIcon name={p.categoryName} /></span>
               <strong>Ảnh sản phẩm đang được cập nhật</strong>
-              <small>TVT Meow sẽ bổ sung hình ảnh sớm</small>
+              <small>MeoShop sẽ bổ sung hình ảnh sớm</small>
             </div>
           )}
         </div>

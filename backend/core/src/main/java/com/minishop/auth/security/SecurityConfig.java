@@ -73,7 +73,9 @@ public class SecurityConfig {
                 "http://localhost:5173",
                 "http://127.0.0.1:5173",
                 "http://localhost:5174",
-                "http://127.0.0.1:5174"));
+                "http://127.0.0.1:5174",
+                "https://desktop-7j9kc6g.tail00775b.ts.net",
+                "https://desktop-7j9kc6g.tail00775b.ts.net:8443"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);

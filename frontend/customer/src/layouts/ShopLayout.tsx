@@ -41,9 +41,9 @@ export function ShopLayout() {
       <header className="header">
         <div className="header-inner">
           <Link to="/" className="brand">
-            <span className="brand-mark"><img src="/logo.png" alt="TVT Meow" /></span>
+            <span className="brand-mark"><img src="/logo.png" alt="MeoShop" /></span>
             <span className="brand-copy">
-              <span className="brand-name">TVT <em>Meow</em></span>
+              <span className="brand-name">Meo<em>Shop</em></span>
               <small>Đồ ngon cho boss</small>
             </span>
           </Link>

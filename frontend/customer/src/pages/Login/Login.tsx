@@ -26,9 +26,9 @@ export function Login() {
   return (
     <div className="auth-split">
       <aside className="auth-welcome">
-        <img src="/logo.png" alt="TVT Meow" />
+        <img src="/logo.png" alt="MeoShop" />
         <h1>
-          TVT <span>Meow</span>
+          Meo<span>Shop</span>
           <span className="auth-welcome-sep">|</span>
           Đồ ăn &amp; phụ kiện cho mèo, trải nghiệm dễ dàng.
         </h1>
@@ -50,7 +50,7 @@ export function Login() {
           </label>
           {err && <p className="error">{err}</p>}
           <button className="btn" type="submit">
-            Vào TVT Meow
+            Vào MeoShop
           </button>
         </form>
         <p className="muted" style={{ marginTop: 16 }}>

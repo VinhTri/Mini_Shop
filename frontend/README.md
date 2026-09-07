@@ -1,4 +1,4 @@
-# TVT Meow Frontend
+# MeoShop Frontend
 
 Frontend được chia thành hai ứng dụng độc lập:
 

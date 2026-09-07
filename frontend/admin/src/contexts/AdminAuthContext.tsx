@@ -11,12 +11,20 @@ type AdminAuthContextValue = {
 const Context = createContext<AdminAuthContextValue | null>(null)
 
 function readAdmin(): User | null {
+  const token = localStorage.getItem('minishop_token')
   const raw = localStorage.getItem('minishop_admin_user')
-  if (!raw) return null
+  if (!token || !raw) return null
   try {
     const user = JSON.parse(raw) as User
-    return user.role === 'ADMIN' ? user : null
+    if (user.role !== 'ADMIN') {
+      localStorage.removeItem('minishop_token')
+      localStorage.removeItem('minishop_admin_user')
+      return null
+    }
+    return user
   } catch {
+    localStorage.removeItem('minishop_token')
+    localStorage.removeItem('minishop_admin_user')
     return null
   }
 }
@@ -31,7 +39,11 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
         method: 'POST',
         body: JSON.stringify({ email, password }),
       })
-      if (result.user.role !== 'ADMIN') throw new Error('Tài khoản không có quyền quản trị')
+      if (result.user.role !== 'ADMIN') {
+        localStorage.removeItem('minishop_token')
+        localStorage.removeItem('minishop_admin_user')
+        throw new Error('Tài khoản không có quyền truy cập trang quản trị.')
+      }
       localStorage.setItem('minishop_token', result.token)
       localStorage.setItem('minishop_admin_user', JSON.stringify(result.user))
       setUser(result.user)

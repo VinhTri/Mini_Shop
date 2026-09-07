@@ -19,7 +19,7 @@ public class OpenApiConfig {
                 .bearerFormat("JWT");
         return new OpenAPI()
                 .info(new Info()
-                        .title("TVT Meow API")
+                        .title("MeoShop API")
                         .version("1.0")
                         .description("Shop đồ ăn & phụ kiện cho mèo — JWT, catalog, giỏ, đơn COD, admin"))
                 .components(new Components().addSecuritySchemes("bearerAuth", bearer))

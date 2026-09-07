@@ -17,8 +17,16 @@ function readUser(): User | null {
   const raw = localStorage.getItem('minishop_user')
   if (!token || !raw) return null
   try {
-    return JSON.parse(raw) as User
+    const user = JSON.parse(raw) as User
+    if (user.role !== 'USER') {
+      localStorage.removeItem('minishop_token')
+      localStorage.removeItem('minishop_user')
+      return null
+    }
+    return user
   } catch {
+    localStorage.removeItem('minishop_token')
+    localStorage.removeItem('minishop_user')
     return null
   }
 }
@@ -39,6 +47,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           method: 'POST',
           body: JSON.stringify({ email, password }),
         })
+        if (res.user.role !== 'USER') {
+          localStorage.removeItem('minishop_token')
+          localStorage.removeItem('minishop_user')
+          throw new Error('Tài khoản quản trị. Vui lòng đăng nhập tại trang Admin.')
+        }
         persist(res)
         setUser(res.user)
         try {

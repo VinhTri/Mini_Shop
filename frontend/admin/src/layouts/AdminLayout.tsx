@@ -28,8 +28,8 @@ export function AdminLayout() {
     <div className="admin">
       <aside className="side">
         <Link to="/" className="side-brand">
-          <img src="/logo.png" alt="TVT Meow" />
-          <span><b>TVT <em>Meow</em></b><small>Admin workspace</small></span>
+          <img src="/logo.png" alt="MeoShop" />
+          <span><b>Meo<em>Shop</em></b><small>Admin workspace</small></span>
         </Link>
 
         <nav className="side-nav" aria-label="Điều hướng quản trị">

@@ -149,18 +149,18 @@ export function Home() {
             aria-hidden="true"
           />
           <div className="hero-copy">
-            <p className="hero-kicker"><span /> TVT Meow · chọn kỹ cho boss</p>
+            <p className="hero-kicker"><span /> MeoShop · chọn kỹ cho boss</p>
             <h1>Đồ ngon đúng gu,<br /><em>boss vui mỗi ngày.</em></h1>
             <p className="hero-lead">
               Hạt, pate và phụ kiện được chọn theo nhu cầu thật của mèo. Dễ tìm, giá rõ ràng và giao tận cửa.
             </p>
             <p className="hero-note"><span aria-hidden>✓</span> COD toàn quốc · Theo dõi đơn trong tài khoản</p>
           </div>
-          <figure className="hero-lifestyle" aria-label="TVT Meow — đồ ăn và phụ kiện cho mèo">
+          <figure className="hero-lifestyle" aria-label="MeoShop — đồ ăn và phụ kiện cho mèo">
             <span className="hero-shape hero-shape-one" />
             <span className="hero-shape hero-shape-two" />
             <div className="hero-mascot-wrap">
-              <img src="/logo.png" alt="Mascot mèo của TVT Meow" className="hero-mascot" />
+              <img src="/logo.png" alt="Mascot mèo của MeoShop" className="hero-mascot" />
             </div>
           </figure>
           <div className="hero-marquee" aria-hidden="true">
@@ -192,7 +192,7 @@ export function Home() {
                     <b>{current.name}</b>
                   </nav>
                   <h1>{current.name}</h1>
-                  <p className="muted">Danh mục sản phẩm TVT Meow</p>
+                  <p className="muted">Danh mục sản phẩm MeoShop</p>
                 </div>
               </div>
             ) : (

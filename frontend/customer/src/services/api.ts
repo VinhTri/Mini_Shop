@@ -12,14 +12,14 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
   try {
     res = await fetch(`${API_BASE_URL}${path}`, { ...options, headers })
   } catch {
-    throw new Error('Không kết nối được máy chủ. Hãy kiểm tra backend đang chạy ở cổng 9090.')
+    throw new Error('Không kết nối được máy chủ. Hãy kiểm tra backend local đang chạy ở cổng 9190.')
   }
 
   const contentType = res.headers.get('content-type') || ''
   const body = (contentType.includes('application/json')
     ? await res.json()
     : { message: res.status >= 500
-        ? 'Backend chưa chạy hoặc proxy API chưa kết nối được cổng 9090.'
+        ? 'Backend chưa chạy hoặc proxy API chưa kết nối được cổng 9190.'
         : 'Máy chủ trả về phản hồi không hợp lệ.' }) as {
     success?: boolean
     message?: string
