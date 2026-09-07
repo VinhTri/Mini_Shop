@@ -22,7 +22,7 @@
   .order-account-layout { grid-template-columns:1fr; }
   .order-account-sidebar { position:static; display:grid; grid-template-columns:auto 1fr; }
   .order-account-sidebar>header { border-right:1px solid var(--line); border-bottom:0; }
-  .order-account-sidebar nav { grid-template-columns:1fr 1fr; align-content:center; }
+  .order-account-sidebar nav { grid-template-columns:repeat(2,1fr); align-content:center; }
   .order-sidebar-categories { grid-column:1/-1; display:flex; gap:5px; overflow-x:auto; padding:10px; }
   .order-sidebar-categories>p,.order-sidebar-categories>small { display:none; }
   .order-sidebar-categories a { min-width:max-content; }

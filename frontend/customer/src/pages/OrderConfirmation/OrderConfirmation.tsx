@@ -33,7 +33,7 @@ export function OrderConfirmation() {
           <p className="confirmation-kicker">Đặt hàng thành công</p>
           <h1>Cảm ơn bạn đã mua sắm</h1>
           <p className="confirmation-copy">
-            Đơn <strong>{order.orderCode ?? `#${String(order.id).padStart(4, '0')}`}</strong> đã được ghi nhận. TVT Meow sẽ liên hệ khi đơn được xác nhận.
+            Đơn <strong>{order.orderCode ?? `#${String(order.id).padStart(4, '0')}`}</strong> đã được ghi nhận. MeoShop sẽ liên hệ khi đơn được xác nhận.
           </p>
           <div className="confirmation-contact">
             <div><span>Người nhận</span><b>{order.fullName}</b><small>{order.phone}</small></div>

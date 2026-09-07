@@ -26,7 +26,7 @@ export function AdminLogin() {
 
   return (
     <main className="auth-box">
-      <h1>Quản trị TVT Meow</h1>
+      <h1>Quản trị MeoShop</h1>
       <p className="muted">Đăng nhập bằng tài khoản ADMIN.</p>
       <form className="form" onSubmit={(event) => void submit(event)}>
         <label>Email<input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required /></label>

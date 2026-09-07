@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { NavIcon } from '../../components/NavIcon'
+import { OrderAccountSidebar } from '../../components/OrderAccountSidebar'
 import { useAuth } from '../../contexts/AuthContext'
 import { useCart } from '../../contexts/CartContext'
 import { vnd } from '../../utils/format'
@@ -82,22 +83,29 @@ export function Cart() {
 
   if (cart.items.length === 0) {
     return (
-      <div className="cart-empty">
-        <div className="cart-empty-icon">
-          <NavIcon name="cart" />
-        </div>
-        <p className="cart-empty-kicker">TVT Meow</p>
-        <h1>Giỏ của boss đang trống</h1>
-        <p>Chọn thêm món ngon hoặc đồ chơi. Đơn hàng được giữ lại để bạn thanh toán COD khi sẵn sàng.</p>
-        <Link to="/" className="btn">
-          Tiếp tục mua sắm
-        </Link>
+      <div className="order-account-layout">
+        <OrderAccountSidebar active="cart" />
+        <main>
+          <div className="cart-empty">
+            <div className="cart-empty-icon">
+              <NavIcon name="cart" />
+            </div>
+            <p className="cart-empty-kicker">MeoShop</p>
+            <h1>Giỏ của boss đang trống</h1>
+            <p>Chọn thêm món ngon hoặc đồ chơi. Đơn hàng được giữ lại để bạn thanh toán COD khi sẵn sàng.</p>
+            <Link to="/" className="btn">
+              Tiếp tục mua sắm
+            </Link>
+          </div>
+        </main>
       </div>
     )
   }
 
   return (
-    <div className="cart-page">
+    <div className="order-account-layout">
+      <OrderAccountSidebar active="cart" />
+      <main className="cart-page">
       <div className="cart-head">
         <div>
           <p className="cart-kicker">Đơn hàng của bạn</p>
@@ -134,7 +142,7 @@ export function Cart() {
                   <img src={i.imageUrl} alt={i.name} />
                 </Link>
                 <div className="cart-info">
-                  <span className="cart-line-label">TVT Meow chọn lọc</span>
+                  <span className="cart-line-label">MeoShop chọn lọc</span>
                   <Link to={`/products/${i.productId}`} className="cart-name">
                     {i.name}
                   </Link>
@@ -211,6 +219,7 @@ export function Cart() {
           </div>
         </aside>
       </div>
+      </main>
     </div>
   )
 }

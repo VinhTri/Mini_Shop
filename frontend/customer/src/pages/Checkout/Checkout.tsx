@@ -63,7 +63,7 @@ export function Checkout() {
     await createOrder()
   }
 
-  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=${encodeURIComponent(`TVTMEOW|${selectedTotal}|${phone.replace(/\s/g, '')}`)}`
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=${encodeURIComponent(`MEOSHOP|${selectedTotal}|${phone.replace(/\s/g, '')}`)}`
 
   return (
     <div className="checkout-page">
@@ -86,7 +86,7 @@ export function Checkout() {
               <small>Ghi đầy đủ để đơn được giao nhanh và chính xác.</small>
             </label>
             <label>
-              <span>Ghi chú cho TVT Meow</span>
+              <span>Ghi chú cho MeoShop</span>
               <textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Ví dụ: giao giờ hành chính, gọi trước khi đến" rows={3} maxLength={200} />
               <small>{note.length}/200 ký tự</small>
             </label>

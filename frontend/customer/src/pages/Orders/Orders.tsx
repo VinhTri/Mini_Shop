@@ -53,7 +53,7 @@ export function Orders() {
 
   return (
     <div className="order-account-layout">
-      <OrderAccountSidebar />
+      <OrderAccountSidebar active="orders" />
       <main className="orders-page">
       <header className="orders-heading"><div><p>Tài khoản của bạn</p><h1>Đơn hàng</h1></div><span>{orders.length} đơn đã đặt</span></header>
 

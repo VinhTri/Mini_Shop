@@ -90,7 +90,7 @@ export function OrderDetail() {
   const returnStageIndex = order.returnStatus === 'REFUNDING' ? 2 : returnStages.findIndex((stage) => stage.status === order.returnStatus)
   const exchangeStageIndex = exchangeStages.findIndex((stage) => stage.status === order.exchangeStatus)
 
-  return <div className="order-account-layout"><OrderAccountSidebar /><main className="order-detail-page">
+  return <div className="order-account-layout"><OrderAccountSidebar active="orders" /><main className="order-detail-page">
     <header className="order-detail-head">
       <button onClick={() => nav('/orders')}>← Trở lại</button>
       <div><span>Mã đơn hàng {order.orderCode ?? `#${String(order.id).padStart(4, '0')}`}</span><b className={order.status}>{statusLabel(order.status)}</b></div>

@@ -186,3 +186,80 @@
     gap: 28px;
   }
 }
+
+/* Compact footer for the personal storefront. */
+.ft-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.ft-personal {
+  width: min(520px, 100%);
+}
+
+.ft-personal h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ft-personal .ft-addr {
+  margin: 16px 0 22px;
+}
+
+.ft-main .ft-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.ft-main .ft-brand p {
+  margin-top: 5px;
+}
+
+.ft-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ft-links a {
+  color: #ddd5e7;
+  font-weight: 600;
+}
+
+.ft-links a:hover {
+  color: #f58220;
+}
+
+.ft-bottom .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .ft-main,
+  .ft-bottom .container {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ft-main {
+    gap: 20px;
+  }
+
+  .ft-links {
+    justify-content: flex-start;
+    gap: 14px 20px;
+  }
+}

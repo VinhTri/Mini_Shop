@@ -6,9 +6,7 @@ function Icon({ d, extra }: { d: string; extra?: string }) {
   return (
     <svg className="ft-ico" viewBox="0 0 24 24" fill="none" aria-hidden>
       <path d={d} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      {extra ? (
-        <path d={extra} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      ) : null}
+      {extra && <path d={extra} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />}
     </svg>
   )
 }
@@ -42,8 +40,8 @@ export function Footer() {
   const [email, setEmail] = useState('')
   const [sent, setSent] = useState(false)
 
-  function subscribe(e: FormEvent) {
-    e.preventDefault()
+  function subscribe(event: FormEvent) {
+    event.preventDefault()
     if (!email.trim()) return
     setSent(true)
     setEmail('')
@@ -57,27 +55,28 @@ export function Footer() {
     <footer className="site-footer">
       <div className="ft-pledges">
         <div className="container ft-pledges-row">
-          {pledges.map((p) => (
-            <div key={p.title} className="ft-pledge">
-              <Icon d={p.d} extra={p.extra} />
+          {pledges.map((pledge) => (
+            <div key={pledge.title} className="ft-pledge">
+              <Icon d={pledge.d} extra={pledge.extra} />
               <div>
-                <b>{p.title}</b>
-                <span>{p.desc}</span>
+                <b>{pledge.title}</b>
+                <span>{pledge.desc}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="container ft-body">
-        <div className="ft-brand">
-          <div className="ft-brand-row">
-            <img className="ft-logo" src="/logo.png" alt="TVT Meow" />
+      <div className="container ft-main">
+        <div className="ft-personal">
+          <div className="ft-brand">
+            <img className="ft-logo" src="/logo.png" alt="MeoShop" />
             <div>
-              <strong>TVT MEOW</strong>
-              <p>Cửa hàng đồ ăn và phụ kiện cho mèo — hạt, pate, snack, đồ chơi, đặt COD.</p>
+              <strong>MEOSHOP</strong>
+              <p>Đồ ăn và phụ kiện nhỏ xinh dành cho mèo.</p>
             </div>
           </div>
+
           <p className="ft-addr">
             Trụ sở: Hà Nội, Việt Nam
             <br />
@@ -86,11 +85,11 @@ export function Footer() {
 
           <h3>Đăng ký nhận tin</h3>
           <p className="ft-hint">Nhập email để nhận thông tin sản phẩm mới.</p>
-          <form className="ft-news" onSubmit={(e) => void subscribe(e)}>
+          <form className="ft-news" onSubmit={subscribe}>
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(event) => setEmail(event.target.value)}
               placeholder="Địa chỉ Email"
               required
             />
@@ -102,55 +101,29 @@ export function Footer() {
             <div>
               <span>Theo dõi chúng tôi</span>
               <div className="ft-social">
-                <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
-                  f
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
-                  Ig
-                </a>
-                <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
-                  Yt
-                </a>
-                <a href="https://tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok">
-                  Tk
-                </a>
+                <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">Ig</a>
+                <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">Yt</a>
+                <a href="https://tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok">Tk</a>
               </div>
             </div>
             <b>HOTLINE: 1800 0000</b>
           </div>
         </div>
 
-        <div className="ft-cols">
-          <div>
-            <h3>Về chúng tôi</h3>
-            <Link to="/">Cửa hàng</Link>
-            <Link to="/register">Tạo tài khoản</Link>
-            <Link to="/login">Đăng nhập</Link>
-            <Link to="/cart">Giỏ hàng</Link>
-            <Link to="/orders">Đơn hàng của tôi</Link>
-          </div>
-          <div>
-            <h3>Chính sách &amp; điều khoản</h3>
-            <span>Thành viên TVT Meow</span>
-            <span>Giao hàng COD</span>
-            <span>Đổi trả 7 ngày</span>
-            <span>Bảo mật thông tin</span>
-            <span>Hướng dẫn mua hàng</span>
-          </div>
-          <div>
-            <h3>Dịch vụ khách hàng</h3>
-            <Link to="/orders">Trạng thái đơn hàng</Link>
-            <span>Câu hỏi thường gặp</span>
-            <span>Hotline: 1800 0000</span>
-            <span>Email: support@tvtmeow.local</span>
-            <h3 className="ft-pay-title">Thanh toán</h3>
-            <span>COD — thanh toán khi nhận hàng</span>
-          </div>
-        </div>
+        <nav className="ft-links" aria-label="Liên kết cuối trang">
+          <Link to="/">Cửa hàng</Link>
+          <Link to="/cart">Giỏ hàng</Link>
+          <Link to="/orders">Đơn hàng</Link>
+          <Link to="/login">Đăng nhập</Link>
+        </nav>
       </div>
 
       <div className="ft-bottom">
-        <div className="container">© {new Date().getFullYear()} TVT Meow. Shop cho boss.</div>
+        <div className="container">
+          <span>© {new Date().getFullYear()} MeoShop</span>
+          <span>Thanh toán COD · Hỗ trợ đổi trả trong 7 ngày</span>
+        </div>
       </div>
 
       <button className="ft-top" type="button" onClick={toTop} aria-label="Lên đầu trang">
